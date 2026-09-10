@@ -46,29 +46,12 @@
 </head>
 <body>
   <div class="icon">🎵</div>
-  <p>Tap tombol di bawah untuk buka lagunya di Apple Music</p>
-  <a class="btn" id="open-btn" href="#">Buka di Apple Music</a>
-  <p class="note">Chrome mengharuskan tap manual untuk membuka aplikasi lain — tag NFC tidak bisa memicu ini otomatis.</p>
+  <p>Tap link di bawah untuk buka lagunya:</p>
 
-  <script>
-    // Ganti bagian ini kalau mau redirect ke lagu/album lain
-    var albumPath = "id/album/musician/1894533111?i=1894533119&l=id&ls";
-    var packageName = "com.apple.android.music";
-    var playStoreFallback = "https://play.google.com/store/apps/details?id=" + packageName;
+  <p><a class="btn" href="https://music.apple.com/id/album/musician/1894533111?i=1894533119">
+    Buka di Apple Music
+  </a></p>
 
-    // Format ini mengikuti contoh resmi dari integrasi Shazam -> Apple Music
-    var intentUrl = "intent://music.apple.com/" + albumPath +
-      "#Intent;scheme=http;package=" + packageName +
-      ";action=android.intent.action.VIEW" +
-      ";S.browser_fallback_url=" + encodeURIComponent(playStoreFallback) + ";end";
-
-    var btn = document.getElementById("open-btn");
-    btn.href = intentUrl;
-
-    btn.addEventListener("click", function (e) {
-      e.preventDefault();
-      window.location.href = intentUrl;
-    });
-  </script>
+  <p class="note">Kasih tahu hasilnya: kebuka app Apple Music langsung, atau tetap di browser?</p>
 </body>
 </html>
